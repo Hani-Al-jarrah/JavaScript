@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q 2</title>
+
+    <style>
+        .container {
+            border: 5px solid rgb(11, 11, 11);
+            font-size: 2vw;
+            margin-top: 1vw;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <select id="fontDropdown" style="width: 10vw;" onchange="changeFontFamily();">
+            <option value="Times Roman" selected>Times Roman</option>
+            <option value="Fantasy">Fantasy</option>
+            <option value="Arial">Arial</option>
+            <option value="Impact">Impact</option>
+            <option value="Tahoma">Tahoma</option>
+            <option value="Courier New">Courier New</option>
+        </select>
+
+        <select id="sizeDropdown" onchange="changeFontSize();">
+            <option value="2vw" selected>2vw</option>
+            <option value="3vw" >3vw</option>
+            <option value="4vw">4vw</option>
+            <option value="5vw">5vw</option>
+           
+        </select>
+
+        <input type="checkbox" id="italic" name="italic" value="italic" onclick="Italic();">
+        <label for="italic"> Italic</label>
+
+        <input type="checkbox" id="bold" name="bold" value="bold" onclick="Bold();">
+        <label for="bold"> Bold</label>
+
+        <input type="checkbox" id="underline" name="underline" value="underline" onclick="Underline();">
+        <label for="underline"> Underline</label>
+
+        <div class="container">
+            <p id="qoute">
+                The quick brown Fox over the lazy Dog
+            </p>
+        </div>
+    </div>
+
+    <script>
+   function changeFontFamily() {
+    const dropdown = document.getElementById("fontDropdown");
+    const fontFamily = dropdown.value; 
+    document.getElementById("qoute").style.fontFamily = fontFamily;
+}
+
+
+        function changeFontSize() {
+            const dropdown = document.getElementById("sizeDropdown");
+            const fontSize = dropdown.value; 
+            document.getElementById("qoute").style.fontSize = fontSize;
+        }
+
+        function Italic() {
+            const checkbox = document.getElementById("italic");
+            const quote = document.getElementById("qoute");
+            if (checkbox.checked) {
+                quote.style.fontStyle = "italic";
+            } else {
+                quote.style.fontStyle = "normal";
+            }
+        }
+
+        function Bold() {
+            const checkbox = document.getElementById("bold");
+            const quote = document.getElementById("qoute");
+            if (checkbox.checked) {
+                quote.style.fontWeight = "bold";
+            } else {
+                quote.style.fontWeight = "normal";
+            }
+        }
+
+        function Underline() {
+            const checkbox = document.getElementById("underline");
+            const quote = document.getElementById("qoute");
+            if (checkbox.checked) {
+                quote.style.textDecoration = "underline";
+            } else {
+                quote.style.textDecoration = "none";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

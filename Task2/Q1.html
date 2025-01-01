@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task</title>
+
+    <style>
+        button {
+            background-color: rgb(242, 255, 0);
+            border: 1px solid rgb(52, 52, 52);
+            font-size: 1vw;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div class="task1"><button id="btn">hover here</button></div>
+   
+    <script>
+
+        let btn = document.getElementById('btn');
+        btn.onmouseover = function () { btn.innerHTML = "Hello World!" }
+        btn.onmouseout = function () { btn.innerHTML = "Can i help you?!" }
+
+     </script>
+
+</body>
+
+</html>
