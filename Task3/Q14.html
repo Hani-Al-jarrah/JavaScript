@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+14
+Write a function called longerString
+that accept four string as an arguments,
+and return the first longer string
+
+Ex: longerString("air","school","car","github")
+=> school
+
+Ex: longerString("air","schoo","car","github")
+=> github
+
+try all the cases (change the order of the longestString)
+  -->
+
+    <script>
+ function longerString(str1,str2,str3,str4){
+
+    const strings=[str1,str2,str3,str4]
+
+let longer = strings[0]
+
+for(let i =0 ; i < strings.length; i++ ){
+    if(strings[i].length > longer.length){
+        longer = strings[i]
+    }
+}
+return longer
+ }
+
+ console.log(longerString("air","school","car","github"));
+ console.log(longerString("air","schoo","car","github"));
+ console.log(longerString("HaniAljarrah","air","schoo","car","github"));
+ 
+    </script>
+</body>
+</html>

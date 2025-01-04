@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- 13
+Write a function called shorterString
+that accept five string as an arguments,
+and return the first shorter string
+
+Ex: shorterString("air","school","car","by","github")
+=> by
+
+Ex: shorterString("air","tr","car","by","github")
+=> tr
+
+Ex: shorterString("by","tr","car","air","github")
+=> by
+
+Ex: shorterString("air","by","car","school","github")
+=> by
+
+Ex: shorterString("air","tr","by","car","github")
+=> by
+
+Ex: shorterString("air","tr","car","github","by")
+=> by
+
+ -->
+    <script>
+function shorterString(str1,str2,str3,str4,str5){
+    const strings=[str1,str2,str3,str4,str5]
+
+    let shorter = strings[0]
+
+    for(let i =0 ; i <strings.length; i++ ){
+        if(strings[i].length < shorter.length){
+            shorter = strings[i]
+        }
+    }
+    return shorter
+}
+
+console.log(shorterString("air", "school", "car", "by", "github")); 
+console.log(shorterString("air", "tr", "car", "by", "github"));     
+console.log(shorterString("by", "tr", "car", "air", "github"));    
+console.log(shorterString("air", "by", "car", "school", "github")); 
+console.log(shorterString("air", "tr", "by", "car", "github"));    
+console.log(shorterString("air", "tr", "car", "github", "by"));  
+
+
+    </script>
+</body>
+</html>
