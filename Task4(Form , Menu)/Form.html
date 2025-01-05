@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form & Local Storage</title>
+
+    <style>
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            margin-top: 20px;
+            width: 300px;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form id="userForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required><br><br>
+
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender">
+            <option>male</option>
+            <option>female</option>
+        </select><br><br>
+
+        <label for="birthdate">Birth Date:</label>
+        <input type="date" id="birthdate" name="birthdate"><br><br>
+
+
+        <label for="myfile">Upload Your Image:</label>
+        <input type="file" id="myfile" onchange="showImage()"><br><br>
+
+
+
+        <label for="description">Description:</label>
+        <input type="text" id="description" name="description" required><br><br>
+
+        <label for="m&u">Major & University:</label>
+        <input type="text" id="m&u" name="m&u" required><br><br>
+
+        <label for="language">Programming Languages</label>
+        <input type="checkbox" id="html" name="language" value="HTML"> HTML
+        <input type="checkbox" id="css" name="language" value="CSS"> CSS
+        <input type="checkbox" id="javascript" name="language" value="JavaScript"> JavaScript<br><br>
+        <hr>
+
+        <label for="siblings">Siblings:</label>
+        <input type="text" id="siblings" name="siblings" required><br><br>
+
+        <label for="siblingsDec">Siblings Description:</label>
+        <input type="text" id="siblingsDec" name="siblingsDec" required><br><br>
+
+        <button type="button" onclick="saveToLocal()">Save to Local Storage</button>
+        <button type="button" onclick="showLocal()">Show Local Storage</button>
+    </form>
+
+    <div class="card">
+
+        <p id="outputName">Name:</p>
+        <p id="outputAge">Age:</p>
+        <p id="outputGender">Gender:</p>
+        <p id="outputBirthdate">Birthdate:</p>
+        <p id="outputDescription">Description:</p>
+        <p id="outputMajor">Major & University:</p>
+        <p id="outputLanguages">Programming Languages:</p>
+        <p id="outputSiblings">Siblings:</p>
+        <p id="outputSiblingsDesc">Siblings Description:</p>
+    </div>
+
+    <script>
+        function saveToLocal() {
+            localStorage.setItem("name", document.getElementById("name").value);
+            localStorage.setItem("age", document.getElementById("age").value);
+            localStorage.setItem("gender", document.getElementById("gender").value);
+            localStorage.setItem("birthdate", document.getElementById("birthdate").value);
+            localStorage.setItem("description", document.getElementById("description").value);
+            localStorage.setItem("major", document.getElementById("m&u").value);
+
+            const languages =
+                (document.getElementById("html").checked ? "HTML " : "") +
+                (document.getElementById("css").checked ? "CSS " : "") +
+                (document.getElementById("javascript").checked ? "JavaScript" : "");
+            localStorage.setItem("languages", languages);
+
+            localStorage.setItem("siblings", document.getElementById("siblings").value);
+            localStorage.setItem("siblingsDesc", document.getElementById("siblingsDec").value);
+        }
+
+        function showLocal() {
+            document.getElementById("outputName").innerText = "Name: " + (localStorage.getItem("name") || "No data");
+            document.getElementById("outputAge").innerText = "Age: " + (localStorage.getItem("age") || "No data");
+            document.getElementById("outputGender").innerText = "Gender: " + (localStorage.getItem("gender") || "No data");
+            document.getElementById("outputBirthdate").innerText = "Birthdate: " + (localStorage.getItem("birthdate") || "No data");
+            document.getElementById("outputDescription").innerText = "Description: " + (localStorage.getItem("description") || "No data");
+            document.getElementById("outputMajor").innerText = "Major & University: " + (localStorage.getItem("major") || "No data");
+
+
+            document.getElementById("outputLanguages").innerText = "Programming Languages: " + (localStorage.getItem("languages") || "No data");
+            document.getElementById("outputSiblings").innerText = "Siblings: " + (localStorage.getItem("siblings") || "No data");
+            document.getElementById("outputSiblingsDesc").innerText = "Siblings Description: " + (localStorage.getItem("siblingsDesc") || "No data");
+        }
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form with Local Storage</title>
+
+       
+</head>
+<body>
+    <label for="myfile">Upload Your Image:</label>
+    <input type="file" id="myfile" onchange="showImage()"><br><br>
+    <img id="outputImage" style="max-width: 100px; display: none;">
+  <script>
+    
+    function showImage() {
+        const fileInput = document.getElementById("myfile");
+        const outputImage = document.getElementById("outputImage");
+
+        // Check if a file is selected
+        if (fileInput.files[0]) {
+            outputImage.src = URL.createObjectURL(fileInput.files[0]); // Create a URL for the file
+            outputImage.style.display = "block"; // Show the image
+        }
+    }
+
+  </script>
+</body>
+</html>
