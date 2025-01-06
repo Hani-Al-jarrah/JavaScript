@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country Flags</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+
+        #flag {
+            margin-top: 20px;
+            max-width: 300px;
+            border: 1px solid #ccc;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>Select a Country</h1>
+    <select id="countrySelect" onchange="showFlag()">
+        <option value="">Select a Country</option>
+        <option value="jordan">Jordan</option>
+        <option value="palestine">Palestine</option>
+        <option value="iceland">Iceland</option>
+    </select>
+
+    <div id="flagContainer">
+        <img id="flag" src="" alt="Country Flag" style="display: none;">
+    </div>
+
+    <script>
+        
+        const countries = ["jordan", "palestine", "iceland"];
+        const flags = [
+            "./flagphotos/Flag_of_Jordan.svg.png",
+            "./flagphotos/Flag_of_Palestine.svg.webp",
+            "./flagphotos/Flag_of_Iceland.svg.png"
+        ];
+
+        function showFlag() {
+            const select = document.getElementById("countrySelect");
+            const flag = document.getElementById("flag");
+            const selectedCountry = select.value;
+
+            if (selectedCountry === countries[0]) { 
+                flag.src = flags[0];
+                flag.style.display = "block";
+            } else if (selectedCountry === countries[1]) {
+                flag.src = flags[1];
+                flag.style.display = "block";
+            } else if (selectedCountry === countries[2]) { 
+                flag.src = flags[2];
+                flag.style.display = "block";
+            } else {
+                flag.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

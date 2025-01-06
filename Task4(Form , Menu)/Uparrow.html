@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll to Top</title>
+    <style>
+
+        #scrollTopBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+
+
+        }
+
+        #scrollTopBtn:hover {
+            background-color: #753f3f;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <button id="scrollTopBtn" onclick="scrollToTop()">↑</button>
+
+    <script>
+        for (let i = 0; i < 100; i++) {
+            document.write("Scroll Down to See the Up Arrow"+"<br>");
+        }
+
+        const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+   
+        window.onscroll = function () {
+            if ( document.documentElement.scrollTop > 100) {
+                scrollTopBtn.style.display = "flex"; 
+            } else {
+                scrollTopBtn.style.display = "none"; 
+            }
+        };
+
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        }
+    </script>
+</body>
+
+</html>
