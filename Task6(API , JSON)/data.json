@@ -1,0 +1,55 @@
+{
+    "users": [
+        {
+            "name": "Mohammad",
+            "age": 30,
+            "email": "mohammad@example.com",
+            "hobbies": [
+                "painting",
+                "hiking",
+                "gardening"
+            ]
+        },
+        {
+            "name": "Aisha",
+            "age": 25,
+            "email": "aisha@example.com",
+            "hobbies": [
+                "photography",
+                "traveling",
+                "reading"
+            ]
+        },
+        {
+            "name": "Omar",
+            "age": 35,
+            "email": "omar@example.com",
+            "hobbies": [
+                "cycling",
+                "swimming",
+                "playing chess"
+            ]
+        },
+        {
+            "name": "Layla",
+            "age": 28,
+            "email": "layla@example.com",
+            "hobbies": [
+                "baking",
+                "drawing",
+                "dancing"
+            ]
+        },
+        {
+            "name": "Hassan",
+            "age": 32,
+            "email": "hassan@example.com",
+            "hobbies": [
+                "running",
+                "coding",
+                "watching movies"
+            ]
+        }
+    
+    ]
+}
